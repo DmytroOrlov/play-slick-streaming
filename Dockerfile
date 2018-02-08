@@ -4,9 +4,9 @@ FROM dmytroorlov/jdk
 
 WORKDIR /root
 
-ADD target/universal/stage /root
-ADD production.conf /root/production.conf
+COPY production.conf /root/production.conf
+COPY target/universal/stage /root
 
 EXPOSE 9000
 
-CMD ["/root/bin/rdb-to-elastic", "-Dconfig.file=/root/production.conf"]
+CMD ["/root/bin/rdb-to-elastic", "-Dconfig.file=/root/production.conf", "-Dpidfile.path=/dev/null"]
