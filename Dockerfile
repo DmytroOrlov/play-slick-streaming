@@ -5,7 +5,7 @@ FROM dmytroorlov/jdk
 WORKDIR /root
 
 COPY production.conf /root/production.conf
-COPY target/universal/stage /root
+COPY server/target/universal/stage /root
 
 EXPOSE 9000
 

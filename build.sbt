@@ -1,18 +1,22 @@
 lazy val playSlickV = "3.0.3"
 
-lazy val `rdb-to-elastic` = (project in file("."))
+lazy val server = project
   .enablePlugins(PlayScala)
   .settings(
-    version := "1.0-SNAPSHOT",
-    scalaVersion := "2.12.4",
+    inThisBuild(Seq(
+      version := "1.0-SNAPSHOT",
+      scalaVersion := "2.12.4",
+      libraryDependencies ++= Seq(
+        "com.typesafe.play" %% "play-slick-evolutions" % playSlickV,
+        "org.postgresql" % "postgresql" % "42.2.1",
+        "com.h2database" % "h2" % "1.4.196"
+      )
+    )),
     libraryDependencies ++= Seq(
       guice,
       "io.monix" %% "monix" % "3.0.0-M3",
       "com.typesafe.play" %% "play-slick" % playSlickV,
-      "com.typesafe.play" %% "play-slick-evolutions" % playSlickV,
-      "org.postgresql" % "postgresql" % "42.2.1",
-      "com.h2database" % "h2" % "1.4.196",
-      "org.elasticsearch.client" % "rest"  % "6.0.0-alpha2",
+      "org.elasticsearch.client" % "rest" % "6.0.0-alpha2",
 
       "org.scalatest" %% "scalatest" % "3.2.0-SNAP10" % Test,
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
@@ -21,3 +25,6 @@ lazy val `rdb-to-elastic` = (project in file("."))
       "org.mockito" % "mockito-core" % "2.13.0" % Test
     )
   )
+
+lazy val `run-evolutions` = (project in file("."))
+  .enablePlugins(PlayScala)

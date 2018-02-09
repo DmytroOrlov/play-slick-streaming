@@ -16,7 +16,7 @@ import slick.jdbc.JdbcProfile
 import scala.collection.JavaConverters._
 import scala.concurrent.{ExecutionContext, Future, Promise}
 
-@slick.basic.StaticDatabaseConfig("file:conf/application.conf#slick.dbs.default")
+@slick.basic.StaticDatabaseConfig("file:server/conf/application.conf#slick.dbs.default")
 @Singleton
 class RdbToElasticController @Inject()
 (protected val dbConfigProvider: DatabaseConfigProvider, cc: ControllerComponents, conf: Configuration)
