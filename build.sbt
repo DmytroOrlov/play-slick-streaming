@@ -16,7 +16,7 @@ lazy val server = project
       guice,
       "io.monix" %% "monix" % "3.0.0-M3",
       "com.typesafe.play" %% "play-slick" % playSlickV,
-      "org.elasticsearch.client" % "rest" % "6.0.0-alpha2",
+      "org.elasticsearch.client" % "elasticsearch-rest-client" % "6.2.2",
 
       "org.scalatest" %% "scalatest" % "3.2.0-SNAP10" % Test,
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
