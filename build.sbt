@@ -9,7 +9,7 @@ lazy val server = project
       libraryDependencies ++= Seq(
         "com.typesafe.play" %% "play-slick-evolutions" % playSlickV,
         "org.postgresql" % "postgresql" % "42.2.2",
-        "com.h2database" % "h2" % "1.4.196"
+        "com.h2database" % "h2" % "1.4.197"
       )
     )),
     libraryDependencies ++= Seq(
