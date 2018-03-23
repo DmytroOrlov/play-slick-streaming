@@ -14,7 +14,7 @@ lazy val server = project
     )),
     libraryDependencies ++= Seq(
       guice,
-      "io.monix" %% "monix" % "3.0.0-M3",
+      "io.monix" %% "monix" % "3.0.0-RC1",
       "com.typesafe.play" %% "play-slick" % playSlickV,
       "org.elasticsearch.client" % "elasticsearch-rest-client" % "6.2.2",
 
