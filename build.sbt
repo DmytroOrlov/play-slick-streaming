@@ -22,7 +22,7 @@ lazy val server = project
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
       "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
       "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test,
-      "org.mockito" % "mockito-core" % "2.16.0" % Test
+      "org.mockito" % "mockito-core" % "2.19.0" % Test
     )
   )
   .aggregate(`run-evolutions`)
