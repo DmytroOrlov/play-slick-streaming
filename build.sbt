@@ -20,7 +20,7 @@ lazy val server = project
 
       "org.scalatest" %% "scalatest" % "3.2.0-SNAP10" % Test,
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
-      "org.scalacheck" %% "scalacheck" % "1.13.5" % Test,
+      "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
       "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test,
       "org.mockito" % "mockito-core" % "2.16.0" % Test
     )
