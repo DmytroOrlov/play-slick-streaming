@@ -1,6 +1,6 @@
 # docker build -t rdbtoelasticstreaming_web-app .
 
-FROM dmytroorlov/jdk
+FROM openjdk:8
 
 WORKDIR /root
 
