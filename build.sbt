@@ -14,7 +14,7 @@ lazy val server = project
     )),
     libraryDependencies ++= Seq(
       guice,
-      "io.monix" %% "monix" % "3.0.0-RC1",
+      "io.monix" %% "monix" % "3.0.0-RC2",
       "com.typesafe.play" %% "play-slick" % playSlickV,
 
       "org.scalatest" %% "scalatest" % "3.0.7" % Test,
