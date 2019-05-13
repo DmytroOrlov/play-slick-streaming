@@ -21,7 +21,7 @@ class RdbToElasticController @Inject()
   import dbConfig.profile.api._
 
   def stream: Action[AnyContent] = Action {
-    val bulkSize = 10000
+    val bulkSize = 100
     val source = select(bulkSize).map(StreamData.apply).map { personCity =>
       Json.toJson(personCity)
     }
