@@ -8,7 +8,7 @@ lazy val server = project
       scalaVersion := "2.12.8",
       libraryDependencies ++= Seq(
         "com.typesafe.play" %% "play-slick-evolutions" % playSlickV,
-        "org.postgresql" % "postgresql" % "42.2.2",
+        "org.postgresql" % "postgresql" % "42.2.5",
         "com.h2database" % "h2" % "1.4.197"
       )
     )),
