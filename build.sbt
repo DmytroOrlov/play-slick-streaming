@@ -17,7 +17,7 @@ lazy val server = project
       "io.monix" %% "monix" % "3.0.0-RC1",
       "com.typesafe.play" %% "play-slick" % playSlickV,
 
-      "org.scalatest" %% "scalatest" % "3.2.0-SNAP10" % Test,
+      "org.scalatest" %% "scalatest" % "3.0.7" % Test,
       "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
       "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
       "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test,
