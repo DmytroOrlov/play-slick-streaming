@@ -27,8 +27,8 @@ class RdbToElasticController @Inject()
     Ok.chunked(source)
   }
 
-  private def select(bulkSize: Int): Source[(String, String), NotUsed] =
+  private def select(bulkSize: Int)/*: Source[Int, NotUsed]*/ =
     Source.fromPublisher(
-      db.stream(tsql"SELECT Person.name, City.name FROM Person, City WHERE Person.city_id = City.id" /*.as[(String, String)]*/ .transactionally.withStatementParameters(fetchSize = bulkSize))
+      db.stream(tsql"SELECT id FROM stream_data ORDER BY id" /*.as[Int]*/ .transactionally.withStatementParameters(fetchSize = bulkSize))
     )
 }
