@@ -18,7 +18,7 @@ lazy val server = project
       "com.typesafe.play" %% "play-slick" % playSlickV,
 
       "org.scalatest" %% "scalatest" % "3.0.7" % Test,
-      "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
+      "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.2" % Test,
       "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
       "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test,
       "org.mockito" % "mockito-core" % "2.27.0" % Test
