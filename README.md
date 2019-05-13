@@ -1,9 +1,4 @@
-Start env in docker:
-```sh
-sbt stage && docker-compose up --build
-```
-
-or run on localhost:
+Run on localhost:
 ```sh
 docker run --rm -d -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres postgres && \
   sbt 'runMain ApplyEvolutions' && \
