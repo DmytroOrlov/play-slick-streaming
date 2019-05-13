@@ -5,7 +5,8 @@ import akka.stream.Materializer
 import akka.stream.scaladsl.Source
 import javax.inject.{Inject, Singleton}
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
-import play.api.libs.json.Json
+import play.api.libs.json.Json._
+import play.api.libs.json._
 import play.api.mvc._
 import slick.jdbc.JdbcProfile
 
@@ -21,7 +22,7 @@ class RdbToElasticController @Inject()
 
   def stream: Action[AnyContent] = Action {
     val bulkSize = 10000
-    val source = select(bulkSize).map { personCity =>
+    val source = select(bulkSize).map(StreamData.apply).map { personCity =>
       Json.toJson(personCity)
     }
     Ok.chunked(source)
@@ -31,4 +32,10 @@ class RdbToElasticController @Inject()
     Source.fromPublisher(
       db.stream(tsql"SELECT id FROM stream_data ORDER BY id" /*.as[Int]*/ .transactionally.withStatementParameters(fetchSize = bulkSize))
     )
+}
+
+case class StreamData(id: Int)
+
+object StreamData {
+  implicit val `writes[StreamData]`: Writes[StreamData] = writes[StreamData]
 }
