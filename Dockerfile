@@ -1,4 +1,4 @@
-# docker build -t rdbtoelasticstreaming_web-app .
+# docker build -t play-slick-streaming_web-app_1 .
 
 FROM openjdk:8
 
@@ -9,4 +9,4 @@ COPY server/target/universal/stage /root
 
 EXPOSE 9000
 
-CMD ["/root/bin/rdb-to-elastic", "-Dconfig.file=/root/production.conf", "-Dpidfile.path=/dev/null"]
+CMD ["/root/bin/server", "-Dconfig.file=/root/production.conf", "-Dpidfile.path=/dev/null"]
